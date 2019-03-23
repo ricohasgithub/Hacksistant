@@ -21,3 +21,38 @@ def regression_model():
     model.compile(optimizer='adam', loss='mean_squared_error')
     return model
 
+# User input generalization
+    
+# Categories
+cat_docs = [
+    "environment",
+    "education",
+    "social",
+    "agriculture",
+    "urban"
+]
+
+tok = Tokenizer()
+tok.fit_on_texts(cat_docs)
+
+print(tok.word_counts)
+print(tok.document_count)
+print(tok.word_index)
+print(tok.word_docs)
+
+# Technologies
+
+tech_docs = [
+    "python",
+    "java",
+    "javascipt",
+    "website",
+    "android",
+    "ios",
+    "vr"
+]
+
+tok2 = Tokenizer()
+tok2.fit_on_texts(tech_docs)
+
+
