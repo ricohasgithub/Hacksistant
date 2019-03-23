@@ -67,6 +67,10 @@ category_arr = text_to_word_sequence(category_string)
 category = tok.texts_to_matrix(category_arr, mode='count')
 print(category)
 
+# Get familiar techologies input
+tech_string = input("Input familiar technologies, programming languages .etc")
+tech_arr = text_to_word_sequence(tech_string)
+
 # Get technology input
 tech = tok2.texts_to_matrix(tech_arr, mode='count')
 print(tech)
