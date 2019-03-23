@@ -11,6 +11,12 @@ from keras.preprocessing.text import text_to_word_sequence
 from keras.preprocessing.text import Tokenizer
 
 # Read technology toolkits data from csv file into panda table
+tech_toolkits_data = pd.read_csv("datasets/tech_toolkits.csv")
+print(tech_toolkits_data.head())
+print(tech_toolkits_data.shape)
+print(tech_toolkits_data.describe())
+
+tech_toolkits_data_columns = tech_toolkits_data.columns
 
 
 
