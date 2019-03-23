@@ -41,7 +41,6 @@ print(tok.word_index)
 print(tok.word_docs)
 
 # Technologies
-
 tech_docs = [
     "python",
     "java",
@@ -55,4 +54,19 @@ tech_docs = [
 tok2 = Tokenizer()
 tok2.fit_on_texts(tech_docs)
 
+print(tok2.word_counts)
+print(tok2.document_count)
+print(tok2.word_index)
+print(tok2.word_docs)
 
+# Get category input
+category_string = input("Input hackathon category:")
+category_arr = text_to_word_sequence(category_string)
+
+# Encode new categories (string -> int)
+category = tok.texts_to_matrix(category_arr, mode='count')
+print(category)
+
+# Get technology input
+tech = tok2.texts_to_matrix(tech_arr, mode='count')
+print(tech)
