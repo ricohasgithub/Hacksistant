@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
 
+import keras
+
 from keras.layers import Lambda
 from keras import backend as K
 
@@ -53,6 +55,9 @@ print(tech_toolkits_train_lan)
 tech_toolkits_train_tar = tech_toolkits_train[tech_toolkits_train_columns[9:19]]
 print(tech_toolkits_train_tar)
 
+# Input tensors
+predictor = tech_toolkits_train[tech_toolkits_train_columns[0:9]]
+target = tech_toolkits_train[tech_toolkits_train_columns[9:19]]
 
 # Model to get useful toolkites to use based on technologies familiar
 
@@ -62,7 +67,7 @@ print(tech_toolkits_train_tar)
 def tech_regression_model():
     # Create model
     model = Sequential()
-    model.add(Dense(9, activation='relu', input_shape=()))
+    model.add(Dense(9, activation='relu', input_shape=(9,)))
     model.add(Dense(27, activation='relu'))
     model.add(Dense(8))
     
@@ -108,6 +113,22 @@ print(tok2.document_count)
 print(tok2.word_index)
 print(tok2.word_docs)
 
+# Program Type
+tprogram_docs = [
+        "app",
+        "website",
+        "mobile"
+]
+
+tok3 = Tokenizer()
+tok3.fit_on_texts(tprogram_docs)
+
+print(tok3.word_counts)
+print(tok3.document_count)
+print(tok3.word_index)
+print(tok3.word_docs)
+
+
 # Get category input
 category_string = input("Input hackathon category:")
 category_arr = text_to_word_sequence(category_string)
@@ -123,3 +144,18 @@ tech_arr = text_to_word_sequence(tech_string)
 # Get technology input
 tech = tok2.texts_to_matrix(tech_arr, mode='count')
 print(tech)
+
+# Get the desired type of program
+tprogram_string = input("Input what you want to make:")
+tprogram = tok.texts_to_matrix(tprogram_string, mode='count')
+print(tprogram)
+
+
+# Build the model
+tech_toolkits_model = tech_regression_model()
+
+# Fit/Train the model
+tech_toolkits_model.fit(predictor, target, validation_split=0.3, epochs=100, verbose=2)
+
+
+
