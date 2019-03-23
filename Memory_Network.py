@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 from keras.layers import Lambda
 from keras import backend as K
 
@@ -7,15 +10,21 @@ from keras.layers import Input, LSTM, Dense
 from keras.preprocessing.text import text_to_word_sequence
 from keras.preprocessing.text import Tokenizer
 
-# Model to get useful toolkites to use based on model
+# Read technology toolkits data from csv file into panda table
+
+
+
+# Model to get useful toolkites to use based on technologies familiar
+
+# Model returns a vector of values, each for a toolkit/library and the value indicating the usefulness
 
 # Define regression model
-def regression_model():
+def tech_regression_model():
     # Create model
     model = Sequential()
     model.add(Dense(7, activation='relu', input_shape=()))
     model.add(Dense(50, activation='relu'))
-    model.add(Dense(25))
+    model.add(Dense(21))
     
     # Compile model
     model.compile(optimizer='adam', loss='mean_squared_error')
