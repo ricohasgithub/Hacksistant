@@ -108,15 +108,15 @@ while True:
     # User has finished entering commands, get new update and feed into network and post
     if done:
         # Get three query fields
-        topic = ('/topic', None)
+        topic = firebase.get('/topic', None)
         category_arr = text_to_word_sequence(topic)
         category = tok.texts_to_matrix(category_arr, mode='count')
         
-        language = ('language', None)
+        language = firebase.get('language', None)
         tech_arr = text_to_word_sequence(language)
         tech = tok2.texts_to_matrix(tech_arr, mode='count')
         
-        platform = ('/platfoem', None)
+        platform = firebase.get('/platfoem', None)
         tprogram_arr = text_to_word_sequence(platform)
         tprogram = tok3.texts_to_matrix(tprogram_arr, mode='count')
         
