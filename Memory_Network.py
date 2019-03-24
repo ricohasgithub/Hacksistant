@@ -14,8 +14,6 @@ from keras.preprocessing.text import Tokenizer
 
 import matplotlib.pyplot as plt
 
-import firebase
-
 # Read technology toolkits data from csv file into panda table
 tech_toolkits_data = pd.read_csv("datasets/tech_toolkits.csv")
 print(tech_toolkits_data.head())
@@ -212,3 +210,5 @@ def get_results (pred):
 
 
 get_results(input_eval)
+
+tech_toolkits_model.save('toolkit_model.h5')
