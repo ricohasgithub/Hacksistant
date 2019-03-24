@@ -192,3 +192,19 @@ for i in range(len(tech)):
 print(input_pred)
 # Put input data into network and get prediction
 input_eval = tech_toolkits_model.predict_on_batch(input_pred)
+
+print(input_eval)
+
+# Method used to decode and decide best toolkit use
+def get_results (pred):
+    _max_ = ""
+    max_val = 0
+    for i in range(len(pred)):
+        for j in range(len(pred[i])):
+            if pred[i][j] > max_val:
+                max_val = pred[i][j]
+                _max_ = tech_toolkits_data.iloc[j,0]
+    print("Recommended toolkit for use: " + _max_)
+    print(max_val)
+    
+get_results(input_eval)
