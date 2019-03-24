@@ -13,7 +13,8 @@ from keras.preprocessing.text import text_to_word_sequence
 from keras.preprocessing.text import Tokenizer
 
 import matplotlib.pyplot as plt
-#139511`
+
+import firebase
 
 # Read technology toolkits data from csv file into panda table
 tech_toolkits_data = pd.read_csv("datasets/tech_toolkits.csv")
@@ -70,8 +71,10 @@ def tech_classification_model():
     # Create model
     model = Sequential()
     model.add(Dense(9, activation='relu', input_dim=(9)))
+    model.add(Dense(25, activation='relu'))
     model.add(Dense(50, activation='relu'))
     model.add(Dense(50, activation='relu'))
+    model.add(Dense(25, activation='relu'))
     model.add(Dense(8, activation='softmax'))
     
     # Compile model
@@ -206,5 +209,6 @@ def get_results (pred):
                 _max_ = tech_toolkits_data.iloc[j,0]
     print("Recommended toolkit for use: " + _max_)
     print(max_val)
-    
+
+
 get_results(input_eval)
