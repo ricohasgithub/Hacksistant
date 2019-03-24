@@ -69,9 +69,9 @@ def tech_classification_model():
     # Create model
     model = Sequential()
     model.add(Dense(9, activation='relu', input_dim=(9)))
-    model.add(Dense(25, activation='relu'))
+    model.add(Dense(25, activation='tanh'))
     model.add(Dense(50, activation='relu'))
-    model.add(Dense(50, activation='relu'))
+    model.add(Dense(50, activation='tanh'))
     model.add(Dense(25, activation='relu'))
     model.add(Dense(8, activation='softmax'))
     
