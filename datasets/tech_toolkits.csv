@@ -1,8 +1,9 @@
 toolkit,int_val,asc_lan,type
+blank,0,0,0
 tensorflow,1,1,1
 opencv,2,1,1
 django,3,1,2
 android,4,2,3
-firebase,5,3,2
-javafx,6,2,1
+javafx,5,3,2
+firebase,6,2,1
 react-native,7,3,3
