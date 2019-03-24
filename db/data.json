@@ -388,5 +388,10 @@
       ]
     }
   ],
-  "done": false
+  "response": {
+      "gotLang": false,
+      "gotTopic": false,
+      "gotPlat": false,
+      "done": false
+  }
 }
