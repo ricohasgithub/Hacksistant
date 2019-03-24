@@ -389,9 +389,12 @@
     }
   ],
   "response": {
-      "gotLang": false,
-      "gotTopic": false,
-      "gotPlat": false,
-      "done": false
+	"done": false,
+	"language": "x",
+	"topic": "x",
+	"platform": "x"
+  },
+  "output": {
+	"answer": "x"
   }
 }

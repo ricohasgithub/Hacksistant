@@ -49,9 +49,9 @@ app.intent('platform to use', (conv, {platform}) => {
     conv.close('Looking for potential ' + plt + ' projects written in ' + lang + ' and with the topic of ' + tpc + '...');
 	db.ref('response/').set({
 		done: true,
-		gotLang: true,
-		gotPlat: true,
-		gotTopic: true
+		language: lang,
+		topic: tpc,
+		platform: plt
 	});
 });
 // Set the DialogflowApp object to handle the HTTPS POST request.
