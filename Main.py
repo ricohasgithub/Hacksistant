@@ -1,6 +1,9 @@
 
 import numpy as np
-import pandas pd
+import pandas as pd
+
+from keras.preprocessing.text import text_to_word_sequence
+from keras.preprocessing.text import Tokenizer
 
 from firebase import firebase
 from keras.models import load_model
@@ -93,6 +96,12 @@ def get_results (pred):
                 _max_ = tech_toolkits_data.iloc[j,0]
     return "Recommended toolkit for use: " + _max_
 
+# Method used to parse the JSON String
+def parse_json (json):
+    json_arr = json.split()
+    print(json_arr[-1])
+    return json_arr[-1]
+
 # Firebase GET and POST info
 firebase = firebase.FirebaseApplication('https://last-second-hack-128ce.firebaseio.com', None)
 
@@ -102,21 +111,24 @@ print("Model Loaded Successfully")
 while True:
     
     # Get whether to pull or not
-    done = firebase.get('/done', None)
+    done = firebase.get('/response', 'done')
     print(done)
     
     # User has finished entering commands, get new update and feed into network and post
     if done:
         # Get three query fields
-        topic = firebase.get('/topic', None)
+        topic_json = firebase.get('/response', 'topic')
+        topic = parse_json(topic_json)
         category_arr = text_to_word_sequence(topic)
         category = tok.texts_to_matrix(category_arr, mode='count')
         
-        language = firebase.get('language', None)
+        language_json = firebase.get('/response', 'language')
+        language = parse_json(language_json)
         tech_arr = text_to_word_sequence(language)
         tech = tok2.texts_to_matrix(tech_arr, mode='count')
         
-        platform = firebase.get('/platfoem', None)
+        platform_json = firebase.get('/response', 'platform')
+        platform = parse_json(platform_json)
         tprogram_arr = text_to_word_sequence(platform)
         tprogram = tok3.texts_to_matrix(tprogram_arr, mode='count')
         
@@ -142,9 +154,9 @@ while True:
         print(input_pred)
         
         # Run model and get output
-        pretrained_model.predict_on_batch(input_pred)
+        input_eval = pretrained_model.predict_on_batch(input_pred)
         
         response = get_results(input_eval)
         
-        result = firebase.post('/response', response,{'print': 'silent'}, {'X_FANCY_HEADER': 'VERY FANCY'})
+        result = firebase.post('/output/answer', response,{'print': 'silent'}, {'X_FANCY_HEADER': 'VERY FANCY'})
         print(result)
