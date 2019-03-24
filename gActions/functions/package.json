@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "actions-on-google": "^2.2.0",
-    "firebase-admin": "~7.0.0",
+    "firebase": "^5.9.1",
+    "firebase-admin": "^7.1.1",
     "firebase-functions": "^2.2.0"
   },
   "devDependencies": {
