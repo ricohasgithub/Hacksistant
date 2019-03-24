@@ -23,14 +23,26 @@ const app = dialogflow({debug: true});
 
 // Get database reference and create path
 const db = admin.database();
-//const ref = db.ref('');
 
 // Make some global variables
-var lang = "";
-var tpc = "";
-var plt = "";
+var lang = "x";
+var tpc = "x";
+var plt = "x";
+var out = "a";
 
-var done = false;
+// Attach an asynchronous callback to read the data at our posts reference
+db.ref('output/answer').on("value", function(snapshot) {
+	out = snapshot.val();
+}, function (errorObject) {
+	console.log("The read failed: " + errorObject.code);
+});
+
+/*db.ref('response/').set({
+	done: false,
+	language: lang,
+	topic: tpc,
+	platform: plt
+});*/
 
 // Handle the Dialogflow intents.
 // The intents collect parameters.
@@ -46,7 +58,7 @@ app.intent('possible topic', (conv, {topic}) => {
 });
 app.intent('platform to use', (conv, {platform}) => {
 	plt = platform;
-    conv.close('Looking for potential ' + plt + ' projects written in ' + lang + ' and with the topic of ' + tpc + '...');
+    conv.close('Looking for potential ' + plt + ' projects written in ' + lang + ' and with the topic of ' + tpc + '...' + out);
 	db.ref('response/').set({
 		done: true,
 		language: lang,
@@ -54,5 +66,6 @@ app.intent('platform to use', (conv, {platform}) => {
 		platform: plt
 	});
 });
+
 // Set the DialogflowApp object to handle the HTTPS POST request.
 exports.dialogflowFirebaseFulfillment = functions.https.onRequest(app);
