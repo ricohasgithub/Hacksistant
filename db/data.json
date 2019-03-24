@@ -1,0 +1,392 @@
+{
+  "category": [
+    {
+      "synonyms": [
+        "environment",
+        "earth",
+        "Lake Erie",
+        "water"
+      ],
+      "value": "environment"
+    },
+    {
+      "value": "hardware",
+      "synonyms": [
+        "hardware"
+      ]
+    },
+    {
+      "value": "machine learning",
+      "synonyms": [
+        "machine learning",
+        "ML"
+      ]
+    },
+    {
+      "value": "artificial intelligence",
+      "synonyms": [
+        "artificial intelligence",
+        "AI"
+      ]
+    },
+    {
+      "value": "science",
+      "synonyms": [
+        "science"
+      ]
+    },
+    {
+      "value": "math",
+      "synonyms": [
+        "math",
+        "mathematics"
+      ]
+    },
+    {
+      "value": "blockchain",
+      "synonyms": [
+        "blockchain",
+        "crypto",
+        "cryptocurrency",
+        "bitcoin",
+        "ethereum"
+      ]
+    },
+    {
+      "value": "weather",
+      "synonyms": [
+        "weather",
+        "climate",
+        "natural disasters"
+      ]
+    },
+    {
+      "value": "urban development",
+      "synonyms": [
+        "urban development"
+      ]
+    },
+    {
+      "value": "animals",
+      "synonyms": [
+        "animals"
+      ]
+    },
+    {
+      "value": "health",
+      "synonyms": [
+        "health"
+      ]
+    },
+    {
+      "value": "education",
+      "synonyms": [
+        "education"
+      ]
+    },
+    {
+      "value": "finance",
+      "synonyms": [
+        "finance",
+        "economy",
+        "stock market",
+        "stocks"
+      ]
+    },
+    {
+      "value": "society",
+      "synonyms": [
+        "society",
+        "social"
+      ]
+    },
+    {
+      "value": "equality",
+      "synonyms": [
+        "equality",
+        "gender equality"
+      ]
+    },
+    {
+      "value": "gaming",
+      "synonyms": [
+        "gaming",
+        "games",
+        "video games"
+      ]
+    },
+    {
+      "value": "entertainment",
+      "synonyms": [
+        "entertainment"
+      ]
+    },
+    {
+      "value": "film and television",
+      "synonyms": [
+        "movies and TV",
+        "movies",
+        "TV",
+        "television",
+        "film"
+      ]
+    },
+    {
+      "value": "food",
+      "synonyms": [
+        "food",
+        "drink"
+      ]
+    },
+    {
+      "value": "data science",
+      "synonyms": [
+        "data science"
+      ]
+    },
+    {
+      "value": "computer security",
+      "synonyms": [
+        "computer security",
+        "pen testing",
+        "encryption",
+        "cryptography"
+      ]
+    },
+    {
+      "value": "networking",
+      "synonyms": [
+        "networking",
+        "internet"
+      ]
+    },
+    {
+      "value": "robotics",
+      "synonyms": [
+        "robotics",
+        "robot"
+      ]
+    },
+    {
+      "value": "computer vision",
+      "synonyms": [
+        "computer vision",
+        "image processing"
+      ]
+    },
+    {
+      "value": "data mining",
+      "synonyms": [
+        "data mining"
+      ]
+    },
+    {
+      "value": "Internet of Things",
+      "synonyms": [
+        "Internet of Things",
+        "IoT",
+        "smart homes",
+        "home control"
+      ]
+    },
+    {
+      "value": "politics",
+      "synonyms": [
+        "politics"
+      ]
+    }
+  ],
+  "technology": [
+    {
+      "value": "mobile",
+      "synonyms": [
+        "mobile",
+        "phone"
+      ]
+    },
+    {
+      "value": "iOS",
+      "synonyms": [
+        "iOS",
+        "apple",
+        "iOS app"
+      ]
+    },
+    {
+      "value": "Android",
+      "synonyms": [
+        "Android"
+      ]
+    },
+    {
+      "value": "website",
+      "synonyms": [
+        "website",
+        "web app"
+      ]
+    },
+    {
+      "value": "Windows",
+      "synonyms": [
+        "Windows",
+        "Microsoft"
+      ]
+    },
+    {
+      "value": "Virtual Reality",
+      "synonyms": [
+        "VR",
+        "Oculus",
+        "HTC Vive",
+        "Cardboard"
+      ]
+    },
+    {
+      "value": "none",
+      "synonyms": [
+        "none",
+        "nothing"
+      ]
+    },
+    {
+      "value": "Augmented Reality",
+      "synonyms": [
+        "Augmented Reality",
+        "AR"
+      ]
+    }
+  ],
+  "type": [
+    {
+      "value": "Java",
+      "synonyms": [
+        "Java",
+        "swing",
+        "JavaFX",
+        "awt",
+        "dl4j",
+        "Kotlin",
+        "Maven"
+      ]
+    },
+    {
+      "value": "JavaScript",
+      "synonyms": [
+        "JavaScript",
+        "React",
+        "Angular",
+        "React Native",
+        "Node",
+        "npm",
+        "Node.js",
+        "ReactJS",
+        "AngularJS",
+        "Tensorflow.js",
+        "Scratch",
+        "JSON",
+        "GCP",
+        "Firebase",
+        "TypeScript",
+        "CoffeeScript",
+        "Google Assistant",
+        "Discord",
+        "Actions on Google"
+      ]
+    },
+    {
+      "value": "Python",
+      "synonyms": [
+        "Python",
+        "Flask",
+        "OpenCV",
+        "Tensorflow",
+        "Keras",
+        "PyTorch",
+        "NumPy",
+        "SciPy",
+        "pip",
+        "Raspberry Pi",
+        "panda",
+        "conda",
+        "jupyter",
+        "julia",
+        "zeppelin",
+        "jupyter notebooks"
+      ]
+    },
+    {
+      "value": "C++",
+      "synonyms": [
+        "C++",
+        "C Plus Plus"
+      ]
+    },
+    {
+      "value": "C#",
+      "synonyms": [
+        "C#",
+        "C Sharp",
+        "Forms",
+        "Unity"
+      ]
+    },
+    {
+      "value": "PHP",
+      "synonyms": [
+        "PHP"
+      ]
+    },
+    {
+      "value": "Ruby",
+      "synonyms": [
+        "Ruby",
+        "Ruby on Rails"
+      ]
+    },
+    {
+      "value": "Swift",
+      "synonyms": [
+        "Swift"
+      ]
+    },
+    {
+      "value": "SQL",
+      "synonyms": [
+        "SQL",
+        "MySQL"
+      ]
+    },
+    {
+      "value": "Perl",
+      "synonyms": [
+        "Perl"
+      ]
+    },
+    {
+      "value": "HTML and CSS",
+      "synonyms": [
+        "HTML and CSS",
+        "HTML",
+        "CSS",
+        "HTML5",
+        "CSS3",
+        "Web Languages",
+        "Web Development"
+      ]
+    },
+    {
+      "value": "C",
+      "synonyms": [
+        "C",
+        "Arduino"
+      ]
+    },
+    {
+      "value": "Visual Basic",
+      "synonyms": [
+        "Visual Basic"
+      ]
+    }
+  ],
+  "done": false
+}
