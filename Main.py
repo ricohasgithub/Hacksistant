@@ -106,7 +106,13 @@ def parse_json (json):
 firebase = firebase.FirebaseApplication('https://last-second-hack-128ce.firebaseio.com', None)
 
 pretrained_model = load_model('toolkit_model.h5')
-print("Model Loaded Successfully")
+#name_pretrained_model = load_model('name_gen_model.h5')
+
+print("Models Loaded Successfully")
+
+#input_name = name_pretrained_model.predict_on_batch("iCare")
+
+#print(input_name)
 
 while True:
     
@@ -156,7 +162,10 @@ while True:
         # Run model and get output
         input_eval = pretrained_model.predict_on_batch(input_pred)
         
+        # Get hackathon name
+        
+        
         response = get_results(input_eval)
         
-        result = firebase.post('/output/answer', response,{'print': 'silent'}, {'X_FANCY_HEADER': 'VERY FANCY'})
-        print(result)
+        #result = firebase.post('/output/answer', response,{'print': 'silent'}, {'X_FANCY_HEADER': 'VERY FANCY'})
+        #print(result)

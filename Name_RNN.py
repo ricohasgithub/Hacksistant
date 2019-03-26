@@ -30,7 +30,7 @@ print('Number of unique chars:', len(chars))
 
 # cut the text in semi-redundant sequences of maxlen characters
 maxlen = 10
-step = 3
+step = 2
 
 sentences = []
 next_chars = []
@@ -119,7 +119,9 @@ class SampleResult(keras.callbacks.Callback):
 sample_callback = SampleResult()
 print("Model Constructed")
 history = model.fit(X, y, 
-                        epochs=100, 
-                        batch_size=108,
+                        epochs=500, 
+                        batch_size=332,
                         verbose=2,
                        callbacks=[sample_callback])
+
+model.save('./name_gen_model.h5')
